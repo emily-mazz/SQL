@@ -1,0 +1,25 @@
+--create a candy store database
+
+CREATE TABLE candy (id INTEGER PRIMARY KEY, name TEXT, aisle INTEGER, category TEXT, price NUMERIC, quantity INTEGER);
+
+INSERT INTO candy VALUES (1, "Hershey Bar", 3, "chocolate", 1.50, 50);
+INSERT INTO candy VALUES (2, "Twix", 3, "chocolate", 1.75, 40);
+INSERT INTO candy VALUES (3, "Sour Patch Kids", 2, "sour", 2.50, 35);
+INSERT INTO candy VALUES (4, "Peppermint Patties", 4, "mint", 1.50, 30);
+INSERT INTO candy VALUES (5, "Snickers", 3, "chocolate", 1.75, 45);
+INSERT INTO candy VALUES (6, "M&Ms", 3, "chocolate", 2.50, 37);
+INSERT INTO candy VALUES (7, "Cotton Candy", 6, "other", 4.00, 20);
+INSERT INTO candy VALUES (8, "Gummy Worms", 2, "sour", 3.75, 22);
+INSERT INTO candy VALUES (9, "Kisses", 3, "chocolate", 1.10, 15);
+INSERT INTO candy VALUES (10, "Charlston Chews", 6, "other", 1.50, 34);
+INSERT INTO candy VALUES (11, "Lollipops", 2, "hard candy", 1.00, 100);
+INSERT INTO candy VALUES (12, "Tootsie Pops", 2, "hard candy", 1.10, 68);
+INSERT INTO candy VALUES (13, "Tootsie Rolls", 3, "chocolate", .50, 150);
+INSERT INTO candy VALUES (14, "Bubble Gum", 2, "gum", 1.75, 35);
+INSERT INTO candy VALUES (15, "Candy Corn", 6, "holiday", 1.80, 72);
+
+--display the database ordered by price.
+SELECT * FROM candy ORDER BY price;
+
+--what is the quantity of candy in each aisle?
+SELECT aisle, SUM(quantity) FROM candy GROUP BY aisle;
